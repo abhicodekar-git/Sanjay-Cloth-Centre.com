@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanjay Cloth Centre - Premium Fashion</title>
+
+    <link rel="stylesheet" href="styles.css?v=5">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Sanjay Cloth Centre</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#products" class="nav-link">Products</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Premium Fashion <span>Redefined</span></h1>
+                <p>Discover the finest collection of luxury clothing crafted with exceptional artistry and timeless elegance since 1985.</p>
+                <a href="#products" class="cta-button">Explore Collection</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Fashion Collection">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>Our Heritage</h2>
+            <p>Since 1985, Sanjay Cloth Centre has been synonymous with premium fashion and exceptional craftsmanship. We curate the finest fabrics and designs to bring you clothing that represents elegance, quality, and timeless style.</p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2>Our Products</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="men">Men</button>
+                <button class="filter-btn" data-filter="women">Women</button>
+                <button class="filter-btn" data-filter="kids">Kids</button>
+                <button class="filter-btn" data-filter="accessories">Accessories</button>
+            </div>
+            <div id="products-grid" class="products-grid">
+                <!-- Products will be loaded here dynamically -->
+                <div class="loading-message">
+                    <div class="loading-spinner"></div>
+                    <p>Loading products from your catalog...</p>
+                    <p><small>Setting up Google Sheets catalog with inventory tracking...</small></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Visit Our Store</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h3>Address</h3>
+                        <p>123 Fashion Street, Mumbai, Maharashtra 400001</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h3>Phone</h3>
+                        <p>+91-8972714744</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h3>Email</h3>
+                        <p>info@sanjayclothcentre.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h3>Hours</h3>
+                        <p>Mon-Sat: 10AM-8PM<br>Sun: 11AM-6PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Popup Modal -->
+    <div id="product-popup" class="popup-overlay">
+        <div class="popup-container">
+            <button class="close-popup" id="close-popup">&times;</button>
+            <div class="popup-content">
+                <div class="popup-image-section">
+                    <div class="popup-image-container">
+                        <img id="popup-product-image" src="" alt="Product Image">
+                        <div class="popup-image-nav" id="popup-image-nav">
+                            <div class="image-arrows">
+                                <button class="arrow prev-arrow" data-direction="prev">‹</button>
+                                <button class="arrow next-arrow" data-direction="next">›</button>
+                            </div>
+                            <div class="nav-dots" id="popup-nav-dots"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup-details">
+                    <h2 id="popup-product-name"></h2>
+                    <p id="popup-product-category"></p>
+
+                    <div class="popup-pricing">
+                        <div class="price-container">
+                            <span class="original-price" id="popup-original-price"></span>
+                            <span class="selling-price">₹<span id="popup-selling-price"></span></span>
+                            <span class="discount-badge" id="popup-discount"></span>
+                        </div>
+                        <div class="stock-info" id="popup-stock-info">
+                            <span class="stock-status" id="popup-stock-status"></span>
+                            <span class="stock-quantity" id="popup-stock-quantity"></span>
+                        </div>
+                    </div>
+
+                    <p id="popup-product-description"></p>
+
+                    <div class="color-selection" id="popup-colors">
+                        <h4>Available Colors:</h4>
+                        <div class="color-options" id="popup-color-options"></div>
+                    </div>
+
+                    <div class="popup-actions">
+                        <button class="whatsapp-btn" id="popup-whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                            Inquire on WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Sanjay Cloth Centre. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js?v=5" defer></script>
+</body>
+</html>
