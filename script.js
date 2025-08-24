@@ -4,7 +4,7 @@
 const CONFIG = {
     // 🔧 IMPORTANT: Update this with your actual Google Sheets CSV URL
     // Example: https://docs.google.com/spreadsheets/d/1ABC123DEF456/export?format=csv
-    GOOGLE_SHEETS_URL: https://docs.google.com/spreadsheets/d/1G3DypaWR3SlN2jCxv7J07J3MZa3kiJnDjZ1N1C-3KHA/export?format=csv
+    GOOGLE_SHEETS_URL:
 ,
 
     // 📱 WhatsApp Configuration - YOUR NUMBER ALREADY SET
